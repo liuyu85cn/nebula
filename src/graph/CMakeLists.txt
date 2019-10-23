@@ -50,6 +50,7 @@ nebula_add_library(
     DeleteVertexExecutor.cpp
     FindPathExecutor.cpp
     LimitExecutor.cpp
+    CompactionExecutor.cpp
 )
 
 nebula_add_library(

@@ -61,6 +61,7 @@ public:
         kBalance,
         kFindPath,
         kLimit,
+        kCompaction,
     };
 
     Kind kind() const {
