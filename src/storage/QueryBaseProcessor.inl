@@ -11,6 +11,7 @@
 
 DECLARE_int32(max_handlers_per_req);
 DECLARE_int32(min_vertices_per_bucket);
+DECLARE_int32(max_sub_vertices);
 
 namespace nebula {
 namespace storage {
@@ -466,6 +467,9 @@ QueryBaseProcessor<REQ, RESP>::asyncProcessBucket(Bucket bucket) {
             codes.emplace_back(pv.first,
                                pv.second,
                                processVertex(pv.first, pv.second));
+            if (stop_) {
+                break;
+            }
         }
         p.setValue(std::move(codes));
     });
